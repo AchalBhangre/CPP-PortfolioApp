@@ -1,0 +1,20 @@
+
+
+{% block content %}
+  <h1>Registration Details</h1>
+  <ul>
+    <li>Name: {{ registration.name }}</li>
+    <li>Email: {{ registration.email }}</li>
+    <li>Phone Number: {{ registration.phone_number }}</li>
+    <li>Portfolio URL: <a href="{{ registration.portfolio_url }}">{{ registration.portfolio_url }}</a></li>
+    <li>Portfolio Images:</li>
+    <ul>
+      {% for img in registration.portfolio_images.all %}
+        <li><img src="{{ img.image.url }}" alt="{{ img.image.name }}"  style="object-fit: contain; width: 50%; height: 50%;"></li>
+      {% empty %}
+        <li>No images found.</li>
+      {% endfor %}
+    </ul>
+  </ul>
+{% endblock %}
+

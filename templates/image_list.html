@@ -1,0 +1,16 @@
+{% block content %}
+  <h1>Image List</h1>
+  <ul>
+    {% for img in images %}
+      {% if img.registration %}
+        <li>
+          <a href="{% url 'registration_details' registration_id=img.registration.id %}">
+            <img src="{{ img.image.url }}" alt="{{ img.image.name }}"  style="object-fit: contain; width: 50%; height: 50%;">
+          </a>
+        </li>
+      {% endif %}
+    {% empty %}
+      <li>No images found.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

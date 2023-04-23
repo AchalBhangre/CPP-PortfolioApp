@@ -1,0 +1,28 @@
+
+
+{% block content %}
+  <h1>Portfolio List</h1>
+  <ul>
+    {% for registration in registrations %}
+      <li>
+        <h2>{{ registration.name }}</h2>
+        <p>{{ registration.email }}</p>
+        <p>{{ registration.phone_number }}</p>
+        <p>{{ registration.portfolio_url }}</p>
+        <p>Portfolio Images:</p>
+        <ul>
+          {% for image in registration.portfolio_images.all %}
+            <li> <img src="{{ image.image.url }}" alt="{{ image.title }}" style="object-fit: contain; width: 50%; height: 50%;"></li>
+          {% empty %}
+            <li>No images found.</li>
+          {% endfor %}
+        </ul>
+        
+						<a href="delete/{{i.id}}" type="submit" class="btn btn-danger">Delete</a>
+						<a href="edit/{{i.id}}" type="submit" class="btn btn-danger">Edit Deatils</a>
+      </li>
+    {% empty %}
+      <li>No registrations found.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

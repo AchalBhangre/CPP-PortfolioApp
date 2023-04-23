@@ -1,0 +1,25 @@
+<html>
+    <body>
+        <div style="width: 500px; height: 500px;">
+            
+            <tr>
+						
+            {% if images %}
+                {% for img in images %}
+                    <img src="{{ img.image.url }}" alt="{{ img.image.name }}" style="object-fit: contain; width: 50%; height: 50%;">
+                    
+                        {% endfor %}
+                       
+                        <td>
+                            <a href="#editCoffeeModal-{{forloop.counter}}" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                            <a href="#deleteCoffeeModal-{{forloop.counter}}" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                        </td>
+                    </tr>
+                     {% else %}
+                      No Image
+                      {% endif %}
+            </div>
+    </body>
+</html>
+  
+
