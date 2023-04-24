@@ -34,9 +34,6 @@ def portfolio_registration_view(request):
         formset = PortfolioImageFormSet(instance=PortfolioRegistration())
     return render(request, 'portfolio_registration.html', {'form': form, 'formset': formset})
 
-    
-
-   
 # views.py
 
 def view_portfolio(request):
@@ -63,13 +60,5 @@ def registration_details(request, registration_id):
     registration = get_object_or_404(PortfolioRegistration, pk=registration_id)
     return render(request, 'registration_details-Merge.html', {'registration': registration})
     
-def portfolio_image_details(request, image_id):
-    # Retrieve the clicked PortfolioImage object
-    image = get_object_or_404(PortfolioImage, pk=image_id)
 
-    # Retrieve the PortfolioRegistration object(s) that contain the clicked image
-    registrations = PortfolioRegistration.objects.filter(portfolio_images=image)
-
-    # Render the retrieved PortfolioRegistration object(s) in a template
-    return render(request, 'portfolio_image_details.html', {'registrations': registrations})
 
