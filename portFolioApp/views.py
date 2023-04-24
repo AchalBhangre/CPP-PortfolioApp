@@ -27,21 +27,6 @@ def index_view(request):
      return render(request, 'index.html',{'images': images,'media_url':settings.MEDIA_URL})
     
 
-def portfolio_registration_view_old(request):
-    if request.method == 'POST':
-        form = PortfolioRegistrationForm(request.POST, request.FILES)
-        if form.is_valid():
-            registration = form.save(commit=False)
-            registration.save()
-            for image in request.FILES.getlist('portfolio_images'):
-                portfolio_image = PortfolioImage(image=image)
-                portfolio_image.save()
-                registration.portfolio_image.add(portfolio_image)
-            registration.save()
-            return render(request, 'registration_success.html')
-    else:
-        form = PortfolioRegistrationForm()
-    return render(request, 'portfolio_registration.html', {'form': form})
     
 def portfolio_registration_view(request):
     if request.method == 'POST':
@@ -91,18 +76,4 @@ def about(request):
     """
     return render(request, 'about.html')
     
-def register(request):
-    if request.method == 'POST':
-        form = RegistrationForm(request.POST)
-        if form.is_valid():
-            # Create a new user account, save it to the database, etc.
-            # ...
 
-            # Send a confirmation email to the user
-            send_confirmation_email(form.cleaned_data['email'])
-
-            return HttpResponseRedirect('/success/')
-    else:
-        form = RegistrationForm()
-
-    return render(request, 'register.html', {'form': form})

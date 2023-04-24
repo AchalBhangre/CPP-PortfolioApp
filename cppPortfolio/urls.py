@@ -21,10 +21,10 @@ from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-    path('portFolioApp/', include('portFolioApp.urls')),
+    path('', include('portFolioApp.urls')),
     path('admin/', admin.site.urls),
     path('signin/',auth_views.LoginView.as_view(
-        template_name='siginin.html'),name='signin'),
+        template_name='signin.html'),name='signin'),
     path('signout/',auth_views.LogoutView.as_view(
         template_name='signout.html'),name='signout'),
 ]
