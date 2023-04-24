@@ -9,7 +9,7 @@
       <div class="img-container">
         {% if img.registration %}
           <a href="{% url 'registration_details' registration_id=img.registration.id %}">
-            <img src="{{ img.image.url }}" alt="{{ img.image.name }}">
+            <img src="{{ img.image.url }}" alt="{{ img.image.name }}" title="Click to view details" style="font-size: 36px;">
           </a>
         {% endif %}
       </div>

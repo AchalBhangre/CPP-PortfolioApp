@@ -8,7 +8,11 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="https://cdn.tailwindcss.com"></script>
         <title>{% block title %}{% endblock %} Portfolio Management System  </title>
-    
+    <style>
+            body {
+                background-color: #D3DDDF;
+            }
+        </style>
 
        
     </head>
@@ -24,7 +28,7 @@
             {% if user.is_authenticated %}
     <div class="flex items-center space-x-6" style="color: #8B8B00;">
          <a href="{% url 'view_portfolio' %}" class="text-lg font-semibold hover:text-gray-500">Home</a>
-        <a href="#" class="text-lg font-semibold hover:text-gray-500">About</a>    
+        <a href="{%url 'about' %}" class="text-lg font-semibold hover:text-gray-500">About</a>    
        <a href="{% url 'portfolio_registration_view' %}" class="text-lg font-semibold hover:text-gray-500">Add Portfolio</a>
        <a href="{% url 'portfolio_list' %}" class="text-lg font-semibold hover:text-gray-500">View Portfolio</a>
        
@@ -51,7 +55,9 @@
     <h3 class="mb-3 font-semibold text-gray-400">About us</h3>
     <div class="font-sans leading-relaxed">
       <p class="text-lg text-lightgoldenrod-400">
-        Welcome to our student management system! Our system is designed to help educational institutions manage their student data more 
-        efficiently and effectively. With our system, you can easily manage student information, track academic progress, and communicate 
-        with students and their families.
+        Welcome to our Portfolio Management System! Our system is designed to help individuals manage
+        their portfolio data more efficiently and effectively. With our system, you can easily manage your 
+        portfolio, track your investment progress, and make informed decisions based on your portfolio's performance.
+        Our platform provides a user-friendly interface that allows you to easily monitor
+        your portfolio's performance over time and analyze your investments. Start managing your portfolio with us today!
       </p>

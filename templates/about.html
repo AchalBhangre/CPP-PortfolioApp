@@ -1,0 +1,51 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<html>
+  <head>
+    <title>About Us</title>
+    
+  </head>
+  <body>
+    <h1>About Us</h1>
+    <p>Welcome to our portfolio Site! We are a team of passionate professionals who are dedicated to creating stunning designs that inspire and engage our clients. Our goal is to help you bring your vision to life, no matter how big or small.</p>
+    
+    <div class="gallery">
+      <img src="https://picsum.photos/200" alt="Image 1">
+      <img src="https://picsum.photos/201" alt="Image 2">
+      <img src="https://picsum.photos/202" alt="Image 3">
+      <img src="https://picsum.photos/203" alt="Image 4">
+    </div>
+    
+    <h2>Our Team</h2>
+    <ul>
+      <li>John Doe - CEO</li>
+      <li>Jane Smith - Creative Director</li>
+      <li>Bob Johnson - Web Developer</li>
+      <li>Sara Lee - Graphic Designer</li>
+    </ul>
+    
+    <h2>Our Services</h2>
+    <p>We offer a range of services to help you with your design needs:</p>
+    <ul>
+      <li>Web design</li>
+      <li>Graphic design</li>
+      <li>Logo design</li>
+      <li>Branding</li>
+    </ul>
+    
+    <p>Contact us today to learn more about how we can help you with your next project!</p>
+    
+    <style>
+      .gallery {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .gallery img {
+        width: 200px;
+        margin: 10px;
+      }
+    </style>
+  </body>
+</html>
+{% endblock %}

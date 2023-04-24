@@ -83,4 +83,8 @@ def registration_details(request, registration_id):
     return render(request, 'registration_details-Merge.html', {'registration': registration})
     
 
-
+def about(request):
+    """
+    Function to render the about page of the application
+    """
+    return render(request, 'about.html')

@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
 <html>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+  
   <style>
     .img-container {
       position: relative;
@@ -30,35 +35,50 @@
     .img-container:hover .img-details {
       opacity: 1;
     }
+    .h1 {
+      font-size: 3em;
+      font-family:Georgia, serif;
+      
+    }
+    .gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery a {
+  margin: 10px;
+}
   </style>
+  </head>
   <body>
-    <table>
-      <thead>
-        <tr>
-          {% if images %}
-            {% for img in images %}
-              {% if forloop.counter0|divisibleby:3 %}
-                </tr><tr>
-              {% endif %}
-              <td>
-                <div class="img-container">
-                  <img src="{{ img.image.url }}" alt="{{ img.image.name }}">
-                  <div class="img-details">
-                    <p>{{ img.title }}</p>
-                    <p>{{ img.description }}</p>
-                  </div>
-                </div>
-              </td>
-              {% if forloop.counter0|add:1|divisibleby:3 or forloop.last %}
-                </tr><tr>
-              {% endif %}
-            {% endfor %}
-          {% else %}
-            <td>No Image</td>
-          {% endif %}
-        </tr>
-      </thead>
-    </table>
+    <h1 class="h1">We have this many portfolio registred</h1>
+    <div class="gallery">
+      {% if images %}
+        {% for img in images %}
+          <a href="{{ img.image.url }}" data-lightbox="gallery">
+            <div class="img-container">
+              <img src="{{ img.image.url }}" alt="{{ img.image.name }}">
+              <div class="img-details">
+                <p>{{ img.title }}</p>
+                <p>{{ img.description }}</p>
+              </div>
+            </div>
+          </a>
+        {% endfor %}
+      {% else %}
+        <p>No Image</p>
+      {% endif %}
+    </div>
   </body>
+  <script>
+    lightbox.option({
+      'resizeDuration': 200,
+      'wrapAround': true,
+      'alwaysShowNavOnTouchDevices': true,
+      'disableScrolling': true
+    })
+  </script>
 </html>
 {% endblock %}
