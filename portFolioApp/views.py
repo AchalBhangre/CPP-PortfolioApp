@@ -4,6 +4,7 @@ from .forms import PortfolioRegistrationForm,PortfolioImageFormSet,SignupForm
 from .models import PortfolioImage,PortfolioRegistration
 from django.shortcuts import render, get_object_or_404
 from django.conf import settings
+from portFolioApp.utils.email import send_confirmation_email
 
 def signupview(request):
     """
@@ -50,6 +51,7 @@ def portfolio_registration_view(request):
             registration = form.save()
             formset.instance = registration
             formset.save()
+            send_confirmation_email(form.cleaned_data['email'])
             return render(request, 'registration_success.html')
     else:
         form = PortfolioRegistrationForm()
@@ -88,3 +90,19 @@ def about(request):
     Function to render the about page of the application
     """
     return render(request, 'about.html')
+    
+def register(request):
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            # Create a new user account, save it to the database, etc.
+            # ...
+
+            # Send a confirmation email to the user
+            send_confirmation_email(form.cleaned_data['email'])
+
+            return HttpResponseRedirect('/success/')
+    else:
+        form = RegistrationForm()
+
+    return render(request, 'register.html', {'form': form})
