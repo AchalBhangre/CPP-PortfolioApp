@@ -1,7 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
-  
+<html>
+  <body>
+  <h1>Portfolioes registred till now</h1>
   <div class="row">
+    
     {% for img in images %}
       <div class="img-container">
         {% if img.registration %}
@@ -36,7 +39,7 @@
       {% endif %}
     </ul>
   </div>
-
+</body>
   <style>
     .row {
       display: flex;
@@ -70,4 +73,5 @@
     font-weight: bold;
   }
   </style>
+  </html>
 {% endblock %}

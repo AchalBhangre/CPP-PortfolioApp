@@ -1,11 +1,65 @@
+
 {% extends 'base.html' %}
-{% load static %}
-
-{% block title %}
-Welcome To
-{% endblock %}
 {% block content %}
-
-
-    
+<html>
+  <style>
+    .img-container {
+      position: relative;
+      width: 400px;
+      height: 400px;
+      overflow: hidden;
+    }
+    .img-container img {
+      width: 100%;
+      height: 100%;
+      transition: transform 0.3s ease;
+    }
+    .img-container:hover img {
+      transform: scale(1.2);
+    }
+    .img-details {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      padding: 5px;
+      opacity: 30;
+      transition: opacity 0.s ease;
+    }
+    .img-container:hover .img-details {
+      opacity: 1;
+    }
+  </style>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          {% if images %}
+            {% for img in images %}
+              {% if forloop.counter0|divisibleby:3 %}
+                </tr><tr>
+              {% endif %}
+              <td>
+                <div class="img-container">
+                  <img src="{{ img.image.url }}" alt="{{ img.image.name }}">
+                  <div class="img-details">
+                    <p>{{ img.title }}</p>
+                    <p>{{ img.description }}</p>
+                  </div>
+                </div>
+              </td>
+              {% if forloop.counter0|add:1|divisibleby:3 or forloop.last %}
+                </tr><tr>
+              {% endif %}
+            {% endfor %}
+          {% else %}
+            <td>No Image</td>
+          {% endif %}
+        </tr>
+      </thead>
+    </table>
+  </body>
+</html>
 {% endblock %}

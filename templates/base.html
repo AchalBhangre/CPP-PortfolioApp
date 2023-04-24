@@ -1,4 +1,4 @@
-{%load static%}
+{% load static%}
 <!DOCTYPE HTML>
 
 <html>
@@ -16,25 +16,25 @@
       
         <nav class="py-6 px-6 flex justify-between items-center border-b border-gray-200">
              <a href="#" class="flex items-center space-x-2 text-xl font-semibold">
-            <i class="fa fa-graduation-cap" style="font-size: 36px;"></i>
-            <span class="text-2xl w-16 h-16 leading-tight text-teal-500 font-serif">Portfolio Management System</span>
+           <i class="fa fa-film" style="font-size: 36px; color: #8B8B00;"></i>
+            <span class="text-2xl w-16 h-16 leading-tight text-lightgoldenrod-400 font-serif" style="color: #8B8B00;">Portfolio Management System</span>
            </a>
             
             <div class="space-x-6 flex items-center">
             {% if user.is_authenticated %}
-    <div class="flex items-center space-x-6">
+    <div class="flex items-center space-x-6" style="color: #8B8B00;">
          <a href="{% url 'view_portfolio' %}" class="text-lg font-semibold hover:text-gray-500">Home</a>
         <a href="#" class="text-lg font-semibold hover:text-gray-500">About</a>    
        <a href="{% url 'portfolio_registration_view' %}" class="text-lg font-semibold hover:text-gray-500">Add Portfolio</a>
        <a href="{% url 'portfolio_list' %}" class="text-lg font-semibold hover:text-gray-500">View Portfolio</a>
        
     </div>
-    <a href="{% url 'signout' %}" class="px-6 py-3 text-lg font-semibold bg-teal-500 text-white rounded-xl hover:bg-teal-700">{{user.username}},Signout</a>
+    <a href="{% url 'signout' %}" class="px-6 py-3 text-lg font-semibold bg-teal-500 text-white rounded-xl hover:bg-teal-700"style="color: #8B8B00; background-color: #444444;" >{{user.username}},Signout</a>
 {% else %}
-     <a href="#" class="text-lg font-semibold hover:text-gray-500">About</a>
+     <a href="#" class="text-lg font-semibold hover:text-gray-500" style="color: #8B8B00;" >About</a>
      
-    <a href="{% url 'signin' %}" class="px-6 py-3 text-lg font-semibold bg-teal-500 text-white rounded-xl hover:bg-teal-700">Sign in</a>
-    <a href="# class="px-6 py-3 text-lg font-semibold bg-teal-500 text-white rounded-xl hover:bg-teal-700">Sign up</a>
+    <a href="{% url 'signin' %}" class="px-6 py-3 text-lg font-semibold bg-teal-500 text-white rounded-xl hover:bg-teal-700" style="color: #8B8B00; background-color: #444444;">Sign in</a>
+    <a href="{% url 'signup' %}" class="px-6 py-3 text-lg font-semibold bg-teal-500 text-white rounded-xl hover:bg-teal-700" style="color: #8B8B00; background-color: #444444;">Sign up</a>
 {% endif %}
 
             </div>
@@ -50,23 +50,8 @@
   <div class="w-2/3 pr-10">
     <h3 class="mb-3 font-semibold text-gray-400">About us</h3>
     <div class="font-sans leading-relaxed">
-      <p class="text-lg text-white">
+      <p class="text-lg text-lightgoldenrod-400">
         Welcome to our student management system! Our system is designed to help educational institutions manage their student data more 
         efficiently and effectively. With our system, you can easily manage student information, track academic progress, and communicate 
         with students and their families.
       </p>
-    </div>
-  </div>
-  <div class="w-1/3">
-    <h3 class="mb-5 font-semibold text-gray-400">Menu</h3>
-    <ul class="space-y-2">
-      <li><a href="#" class="text-lg text-white hover:text-teal-400">About</a></li>
-      <li><a href="#" class="text-lg text-white hover:text-teal-400">Contact-us</a></li>
-      <li><a href="#" class="text-lg text-white hover:text-teal-400">Privacy policy</a></li>
-      <li><a href="#" class="text-lg text-white hover:text-teal-400">Terms of Use</a></li>
-    </ul>
-  </div>
-</footer>
-
-    </body>
-</html>

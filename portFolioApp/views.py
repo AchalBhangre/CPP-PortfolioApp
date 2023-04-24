@@ -1,8 +1,30 @@
 from django.shortcuts import render,redirect
-from .forms import PortfolioRegistrationForm,PortfolioImageFormSet
+from django.contrib import messages
+from .forms import PortfolioRegistrationForm,PortfolioImageFormSet,SignupForm
 from .models import PortfolioImage,PortfolioRegistration
 from django.shortcuts import render, get_object_or_404
 from django.conf import settings
+
+def signupview(request):
+    """
+    Function to render the signup page of the application
+    """
+    if request.method == "POST":
+        form = SignupForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data['username']
+            messages.success(request, f"You are successfully logged in as {username}!")
+            return redirect('signin')
+    elif request.method == "GET":
+        form = SignupForm()
+    return render(request, 'signup.html', {'form': form})
+    
+def index_view(request):
+    
+     images = PortfolioImage.objects.all()
+     return render(request, 'index.html',{'images': images,'media_url':settings.MEDIA_URL})
+    
 
 def portfolio_registration_view_old(request):
     if request.method == 'POST':

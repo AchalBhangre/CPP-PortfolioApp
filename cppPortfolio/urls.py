@@ -24,7 +24,7 @@ urlpatterns = [
     path('portFolioApp/', include('portFolioApp.urls')),
     path('admin/', admin.site.urls),
     path('signin/',auth_views.LoginView.as_view(
-        template_name='signin.html'),name='signin'),
+        template_name='siginin.html'),name='signin'),
     path('signout/',auth_views.LogoutView.as_view(
         template_name='signout.html'),name='signout'),
 ]
