@@ -28,7 +28,7 @@ SECRET_KEY = '6ib&o=nz9%nn5+gnka3zi&3+d0(l@=75y26zu8%-+3fe5*p=l$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['21181946-PortfolioWeb-Env.eba-armdsgyq.eu-west-3.elasticbeanstalk.com']
 
 
 # Application definition
@@ -135,6 +135,7 @@ STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 ]
+DATA_UPLOAD_MAX_MEMORY_SIZE = 8 * 1024 * 1024  # 2 MB
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
