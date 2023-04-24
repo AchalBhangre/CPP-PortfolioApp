@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: pkg-custom-emailsendingLib
+Version: 0.0.1
+Summary: masters project
+Home-page: https://github.com/pypa/sampleproject
+Author: Aachal Bhangre
+Author-email: aachal2193@example.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+# CPP-PortfolioApp
+
+
+
+cd ..
+  418  git push -f origin main
+  419  git remote set-url origin https://github.com/AchalBhangre/CPP-PortfolioApp.git
+  420  git push -f origin main
+  421  git remote add origin https://github.com/AchalBhangre/CPP-PortfolioApp.git
+  422  git sttaus
+  423  git status
+  424  git branch -m main
+  425  git push -f origin main
+  426  history

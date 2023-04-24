@@ -7,9 +7,9 @@ setuptools.setup(
     name="pkg-custom-emailsendingLib",
     # Replace with your own username above
     version="0.0.1",
-    author="Example Author",
-    author_email="author@example.com",
-    description="A small example package",
+    author="Aachal Bhangre",
+    author_email="aachal2193@example.com",
+    description="masters project",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/pypa/sampleproject",

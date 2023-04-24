@@ -28,14 +28,14 @@ SECRET_KEY = '6ib&o=nz9%nn5+gnka3zi&3+d0(l@=75y26zu8%-+3fe5*p=l$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['21181946-PortfolioWeb-Env.eba-armdsgyq.eu-west-3.elasticbeanstalk.com']
 
 
 # Application definition
 
 INSTALLED_APPS = [
     'portFolioApp.apps.PortfolioappConfig',
-    'portFolioApp.utils',
+    'portFolioApp.email_utils',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
