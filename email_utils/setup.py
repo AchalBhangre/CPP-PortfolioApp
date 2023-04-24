@@ -4,15 +4,15 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="pkg-custom-emailsendingLib",
+    name="emailsendingLib",
     # Replace with your own username above
-    version="0.0.1",
+    version="0.0.3",
     author="Aachal Bhangre",
     author_email="aachal2193@example.com",
     description="masters project",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/pypa/sampleproject",
+    url="https://github.com/AchalBhangre/CPP-PortfolioApp",
     packages=setuptools.find_packages(),
     # if you have libraries that your module/package/library
     #you would include them in the install_requires argument
