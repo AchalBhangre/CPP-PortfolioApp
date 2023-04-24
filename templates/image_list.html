@@ -1,16 +1,73 @@
+{% extends 'base.html' %}
 {% block content %}
-  <h1>Image List</h1>
-  <ul>
+  
+  <div class="row">
     {% for img in images %}
-      {% if img.registration %}
-        <li>
+      <div class="img-container">
+        {% if img.registration %}
           <a href="{% url 'registration_details' registration_id=img.registration.id %}">
-            <img src="{{ img.image.url }}" alt="{{ img.image.name }}"  style="object-fit: contain; width: 50%; height: 50%;">
+            <img src="{{ img.image.url }}" alt="{{ img.image.name }}">
           </a>
-        </li>
+        {% endif %}
+      </div>
+      {% if forloop.counter|divisibleby:3 %}
+        <div style="clear:both;"></div>
       {% endif %}
-    {% empty %}
-      <li>No images found.</li>
     {% endfor %}
-  </ul>
+    {% if not images %}
+      <p>No images found.</p>
+    {% endif %}
+  </div>
+  
+  <div class="pagination">
+    <ul class="pagination-list">
+      {% if page_obj.has_previous %}
+        <li><a href="?page={{ page_obj.previous_page_number }}">previous</a></li>
+      {% endif %}
+      {% for page_num in page_obj.paginator.page_range %}
+        {% if page_obj.number == page_num %}
+          <li class="active">{{ page_num }}</li>
+        {% else %}
+          <li><a href="?page={{ page_num }}">{{ page_num }}</a></li>
+        {% endif %}
+      {% endfor %}
+      {% if page_obj.has_next %}
+        <li><a href="?page={{ page_obj.next_page_number }}">next</a></li>
+      {% endif %}
+    </ul>
+  </div>
+
+  <style>
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .img-container {
+      width: calc(33.33% - 10px);
+      margin-bottom: 20px;
+      overflow: hidden;
+      border: 1px solid #ddd;
+    }
+    .img-container img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .img-container:hover img {
+      transform: scale(1.2);
+    }
+    .pagination {
+    margin-top: 20px;
+  }
+  .pagination li {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 18px;
+  }
+  .pagination li.active {
+    font-weight: bold;
+  }
+  </style>
 {% endblock %}
