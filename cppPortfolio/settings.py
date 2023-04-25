@@ -35,7 +35,7 @@ ALLOWED_HOSTS = ['21181946-PortfolioWeb-Env.eba-armdsgyq.eu-west-3.elasticbeanst
 
 INSTALLED_APPS = [
     'portFolioApp.apps.PortfolioappConfig',
-    'portFolioApp.email_utils',
+    'email_utils',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

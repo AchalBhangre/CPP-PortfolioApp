@@ -4,11 +4,11 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="emailsendingLib",
+    name="emailsendingLib-AB",
     # Replace with your own username above
-    version="0.0.3",
+    version="0.0.1",
     author="Aachal Bhangre",
-    author_email="aachal2193@example.com",
+    author_email="aachal2193@gmail.com",
     description="masters project",
     long_description=long_description,
     long_description_content_type="text/markdown",

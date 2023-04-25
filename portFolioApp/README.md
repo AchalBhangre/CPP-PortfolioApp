@@ -1,14 +1,7 @@
-# CPP-PortfolioApp
+# Example Package
 
+This is a simple example package. You can use
+[Github-flavored Markdown](https://github.com/AchalBhangre/CPP-PortfolioApp)
+to write your content.
 
-
-cd ..
-  418  git push -f origin main
-  419  git remote set-url origin https://github.com/AchalBhangre/CPP-PortfolioApp.git
-  420  git push -f origin main
-  421  git remote add origin https://github.com/AchalBhangre/CPP-PortfolioApp.git
-  422  git sttaus
-  423  git status
-  424  git branch -m main
-  425  git push -f origin main
-  426  history
+'pypi-AgENdGVzdC5weXBpLm9yZwIkMDI1ZDg5NWEtNmIyYi00MjU2LTg0ZjgtN2FmODEzODg3NzcyAAIqWzMsImExZjFkY2NhLTJiNjMtNDY4Ni1hY2Y0LWNiYzJjM2E0Y2JhNyJdAAAGILpZmEYcdfEaNbD61jPcgPqNX_iHbYQS6zupr2OV3y63'

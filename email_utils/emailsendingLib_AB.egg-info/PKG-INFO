@@ -1,10 +1,10 @@
 Metadata-Version: 2.1
-Name: custom-emailsendingLib-0.1
-Version: 0.0.2
+Name: emailsendingLib-AB
+Version: 0.0.1
 Summary: masters project
 Home-page: https://github.com/AchalBhangre/CPP-PortfolioApp
 Author: Aachal Bhangre
-Author-email: aachal2193@example.com
+Author-email: aachal2193@gmail.com
 Classifier: Programming Language :: Python :: 3
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: OS Independent

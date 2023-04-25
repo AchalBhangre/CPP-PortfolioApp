@@ -1,6 +1,0 @@
-README.md
-setup.py
-emailsendingLib.egg-info/PKG-INFO
-emailsendingLib.egg-info/SOURCES.txt
-emailsendingLib.egg-info/dependency_links.txt
-emailsendingLib.egg-info/top_level.txt

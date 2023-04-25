@@ -12,3 +12,7 @@ cd ..
   424  git branch -m main
   425  git push -f origin main
   426  history
+  
+  https://test.pypi.org/project/pkg-custom-emailsendingLib/0.0.1/
+  
+  Cname:-21181946-PortfolioWeb-Env.eba-armdsgyq.eu-west-3.elasticbeanstalk.com
