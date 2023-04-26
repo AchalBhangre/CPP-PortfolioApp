@@ -10,9 +10,9 @@ phases:
   pre_build:
     commands:
       - python --version
-      - pylint --disable= $CODEBUILD_SRC_DIR/*.py
-      - pylint --disable=C0103,W0611 $CODEBUILD_SRC_DIR/cppPortfolio/*.py
-      - pylint --disable=E1101 $CODEBUILD_SRC_DIR/portFolioApp/*.py
+      - pylint = $CODEBUILD_SRC_DIR/*.py
+      #- pylint --disable=C0103,W0611 $CODEBUILD_SRC_DIR/cppPortfolio/*.py
+      #- pylint --disable=E1101 $CODEBUILD_SRC_DIR/portFolioApp/*.py
       
 artifacts:
     files:

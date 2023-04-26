@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+"this files play configuration role"
 import os
 import sys
 
