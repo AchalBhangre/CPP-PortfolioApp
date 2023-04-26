@@ -1,5 +1,7 @@
 from django.db import models
-
+"""
+    Function to render the model of application being defined of the application
+    """
 class PortfolioRegistration(models.Model):
     name = models.CharField(max_length=255)
     email = models.EmailField()

@@ -1,18 +1,22 @@
-# CPP-PortfolioApp
+# Project Name: Portfolio Website
 
 
+App model in added in istalled apps of setting.py
 
-cd ..
-  418  git push -f origin main
-  419  git remote set-url origin https://github.com/AchalBhangre/CPP-PortfolioApp.git
-  420  git push -f origin main
-  421  git remote add origin https://github.com/AchalBhangre/CPP-PortfolioApp.git
-  422  git sttaus
-  423  git status
-  424  git branch -m main
-  425  git push -f origin main
-  426  history
+## How To Setup
+1. Clone This Project `https://github.com/AchalBhangre/CPP-PortfolioApp.git`
+2. Enter Project Directory `cd personal_portfolio`
+3. Create a Virtual Environment `virtualenv env`
+4. Activate Virtual Environment `source env/bin/activate`
+5. Install Requirements Package `pip install -r requirements.txt`
+6. Migrate Database `python manage.py migrate`
+7. Create Super User `python manage.py createsuperuser`
+8. Finally Run The Project `python manage.py runserver`
+Application has below features
+
+User can signin, register for portfolio, edit the profile details, 
+admin can only delete the profile.
+
+libray published :- https://test.pypi.org/project/pkg-custom-emailsendingLib/0.0.1/
   
-  https://test.pypi.org/project/pkg-custom-emailsendingLib/0.0.1/
-  
-  Cname:-21181946-PortfolioWeb-Env.eba-armdsgyq.eu-west-3.elasticbeanstalk.com
+EBS URL:- 21181946-PortfolioWeb-Env.eba-armdsgyq.eu-west-3.elasticbeanstalk.com
