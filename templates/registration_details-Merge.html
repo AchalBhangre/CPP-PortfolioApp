@@ -1,13 +1,13 @@
 
 {% extends 'base.html' %}
 {% block content %}
-  <h1>Registration Details</h1>
+  <h1  class="details">Registration Details</h1>
   <ul>
-    <li>Name: {{ registration.name }}</li>
-    <li>Email: {{ registration.email }}</li>
-    <li>Phone Number: {{ registration.phone_number }}</li>
-    <li>Portfolio URL: <a href="{{ registration.portfolio_url }}">{{ registration.portfolio_url }}</a></li>
-    <li>Portfolio Images:</li>
+    <li  class="details">Name: {{ registration.name }}</li>
+    <li  class="details">Email: {{ registration.email }}</li>
+    <li  class="details">Phone Number: {{ registration.phone_number }}</li>
+    <li  class="details">Portfolio URL: <a href="{{ registration.portfolio_url }}">{{ registration.portfolio_url }}</a></li>
+    <li  class="details">Portfolio Images:</li>
     <ul>
       {% for img in images %}
         <li><img src="{{ img.image.url }}" alt="{{ img.image.name }}" style="object-fit: contain; width: 50%; height: 50%;"></li>
@@ -17,5 +17,16 @@
       {% endfor %}
     </ul>
   </ul>
+  <style>
+    body {
+      background-image: url('{{ images.0.image.url }}');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .details {
+  color: white;
+  font-weight: bold;
+}
+  </style>
 {% endblock %}
 
