@@ -61,19 +61,22 @@ def portfolio_list_working(request):
     Function to render the portfolio list page of the application
     """
     registrations = PortfolioRegistration.objects.all()
-    return render(request, 'portfolio_list.html', {'registrations': registrations})
+    
+    return render(request, 'portfolio_list.html', {'registrations': registrations })
 def portfolio_list(request):
     """
     Function to render the portfolio list page of the application
     """
     images = PortfolioImage.objects.select_related('registration')
     return render(request, 'image_list.html', {'images': images})
+    
 def registration_details(request, registration_id):
     """
     Function to render the portfolio list deatils on id click page of the application
     """
     registration = get_object_or_404(PortfolioRegistration, pk=registration_id)
-    return render(request, 'registration_details-Merge.html', {'registration': registration})
+    images = registration.portfolioimage_set.all()
+    return render(request, 'registration_details-Merge.html', {'registration': registration,'images':images})
 def about(request):
     """
     Function to render the about page of the application
