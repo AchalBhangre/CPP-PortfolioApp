@@ -1,7 +1,7 @@
 # Project Name: Portfolio Website
 
 
-App model in added in istalled apps of setting.py
+App model in added in installed apps of setting.py
 
 ## How To Setup
 1. Clone This Project `https://github.com/AchalBhangre/CPP-PortfolioApp.git`
